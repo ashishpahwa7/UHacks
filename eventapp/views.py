@@ -10,6 +10,11 @@ from rest_framework.decorators import api_view
 from django.views.decorators.csrf import csrf_exempt
 from oauth2_provider.models import AccessToken
 
+import requests
+from django.conf import settings
+import json
+
+
 
 @protected_resource()
 def get_user(request):
@@ -27,7 +32,15 @@ def get_user(request):
 	except Exception as e:
 		return JsonResponse({'status':str(e)})
 
-
-#TODO : generate convert and refresh token from facebook using user access token
+@csrf_exempt
 def get_access_token(request):
-	pass
+
+	API_ENDPOINT = "http://vips-events.herokuapp.com/auth/convert-token"
+	
+	data = {'grant_type':'convert_token', 'client_id':settings.CLIENT_ID, 'backend':'facebook', 'token':request.POST['user_access_token'], 'client_secret': settings.CLIENT_SECRET }
+
+	r = requests.post(url = API_ENDPOINT, data = data)
+
+	data = r.json()
+
+	return JsonResponse(data)
