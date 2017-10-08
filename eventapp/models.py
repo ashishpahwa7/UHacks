@@ -1,8 +1,12 @@
 from django.db import models
 
 class College(models.Model):
+
+	college_id = models.CharField(max_length=10,primary_key=True)
 	name = models.CharField(max_length=200)
 	description = models.TextField(blank=True, null=True)
+	university = models.CharField(max_length=200,null=True,blank=True)
+	img_url = models.CharField(max_length=300,blank=True,null=True)
 
 
 	def __str__(self):
@@ -55,3 +59,24 @@ class FacultyAdmin(models.Model):
 
 	def __str__(self):
 		return self.name
+
+
+class Event(models.Model):
+	
+	name = models.CharField(max_length=100)
+	date = models.CharField(max_length=20)
+	venue = models.CharField(max_length=200)
+	time = models.CharField(max_length=50)
+	description = models.TextField()
+	college = models.ForeignKey('College',related_name = 'events')
+	hosted_by = models.CharField(max_length=100)
+	img_url = models.CharField(max_length=300,blank=True,null=True)
+	department = models.CharField(max_length=100,null=True,blank=True)
+
+
+	def __str__(self):
+		return self.name
+
+
+
+

@@ -31,10 +31,12 @@ def get_user(request):
 	except Exception as e:
 		return JsonResponse({'status':str(e)})
 
+
+
 @csrf_exempt
 def get_access_token(request):
 
-	API_ENDPOINT = "http://vips-events.herokuapp.com/auth/convert-token"
+	API_ENDPOINT = "https://vips-events.herokuapp.com/auth/convert-token"
 	try:
 		data = {'grant_type':'convert_token', 'client_id':settings.CLIENT_ID, 'backend':'facebook', 'token':request.POST['user_access_token'], 'client_secret': settings.CLIENT_SECRET }
 		r = requests.post(url = API_ENDPOINT, data = data)
