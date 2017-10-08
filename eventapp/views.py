@@ -18,7 +18,6 @@ import json
 
 @protected_resource()
 def get_user(request):
-
 	''' API view to return user details '''
 	try:
 		
@@ -30,7 +29,6 @@ def get_user(request):
 	
 	except Exception as e:
 		return JsonResponse({'status':str(e)})
-
 
 
 @csrf_exempt

@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import datetime    
 
 class College(models.Model):
 
@@ -79,4 +80,16 @@ class Event(models.Model):
 
 
 
+class Participant(models.Model):
+	
+	name = models.ForeignKey('Student')
+	event = models.ForeignKey('Event')
+	reg_date = models.DateTimeField(default=datetime.now)
+
+	class Meta:
+		unique_together = (("name", "event"),)
+
+
+	def __str__(self):
+		return self.name.user.username
 

@@ -5,6 +5,7 @@ from rest_framework.decorators import api_view
 from oauth2_provider.decorators import protected_resource
 
 
+
 @protected_resource()
 @api_view(['GET', 'POST', ])
 def register_student(request):
@@ -37,6 +38,6 @@ def register_student(request):
 
 
 	except Exception as e:
-		return Response({"meta": {"message":str(e),"status":"2"}})
+		return Response({"meta": {"error":str(e),"status":"2"}})
 
 
