@@ -25,7 +25,6 @@ def get_user(request):
 		token = request.META.get('HTTP_AUTHORIZATION')
 		token_val = token.split(' ')[1]
 		q = AccessToken.objects.get(token=token_val)
-		print("In try block")
 	
 		return JsonResponse({'user':q.user.username})
 	
