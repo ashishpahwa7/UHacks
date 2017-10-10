@@ -15,9 +15,15 @@ class College(models.Model):
 
 
 class Society(models.Model):
-	college = models.ForeignKey('college')
-	s_name = models.CharField(max_length=50)
-	field = models.CharField(max_length=20,default='Technical')
+	college = models.ForeignKey('College')
+	society_name = models.CharField(max_length=50)
+	department = models.CharField(max_length=20, default='Technical')
+	facebook_url = models.CharField(max_length=100, default=None)
+	website = models.CharField(max_length=20,null=True, blank=True)
+
+
+	class Meta:
+		unique_together = (("college", "society_name"),)
 
 
 	def __str__(self):

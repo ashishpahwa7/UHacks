@@ -41,3 +41,21 @@ def register_student(request):
 		return Response({"meta": {"error":str(e),"status":"2"}})
 
 
+
+@protected_resource()
+@api_view(['GET', 'POST', ])
+def does_student_exists(request):
+
+	try:
+		token = request.META.get('HTTP_AUTHORIZATION') # read header information
+		token_val = token.split(' ')[1]
+		token_obj = AccessToken.objects.get(token=token_val) 
+
+		user = token_obj.user
+
+		if Student.objects.filter(user=user).exists():
+			return Response({"meta": {'status': "1"}})
+		else:
+			return Response({"meta": {'status': "0"}})
+	except:
+		return Response({"meta": {'error': str(e)}})
