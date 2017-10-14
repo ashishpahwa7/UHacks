@@ -33,13 +33,12 @@ class Doctor(models.Model):
 		unique_together = (('username','license_number'))
 
 	def __str__(self):
+
+
 		return self.name
 
-
-
-
-class Disease(models.Model):
-
+class disease(models.Model)
+	
 	doc_name = models.ForeignKey('Doctor')
 	h_name = models.ForeignKey('Hospital')
 	disease_name = models.CharField(max_length=20)
@@ -49,5 +48,3 @@ class Disease(models.Model):
 
 	def __str__(self):
 		return self.disease_name
-
-
