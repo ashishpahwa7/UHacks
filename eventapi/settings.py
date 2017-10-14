@@ -197,3 +197,10 @@ except ImportError:
 
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = False
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'vips.ace@gmail.com'
+EMAIL_HOST_PASSWORD = 'lolipop1234..@'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True

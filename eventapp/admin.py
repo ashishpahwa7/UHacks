@@ -1,12 +1,8 @@
 from django.contrib import admin
-from .models import Student,College, Event,Participant, FacultyAdmin, Society
+from .models import Hospital, Doctor
 
 
 # Register your models here.
 
-admin.site.register(Student)
-admin.site.register(College)
-admin.site.register(Event)
-admin.site.register(Participant)
-admin.site.register(Society)
-admin.site.register(FacultyAdmin)
+admin.site.register(Hospital)
+admin.site.register(Doctor)
