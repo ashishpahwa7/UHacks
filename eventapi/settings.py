@@ -25,7 +25,7 @@ SECRET_KEY = '$ym5p33zu-x#jf999^4c(8w+sm0@n^0&@(-6*jn&_uovm6f6pn'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.0.137']
 
 
 # Application definition
@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'corsheaders',
 ]
 
+'''
 REST_FRAMEWORK = {
 
 
@@ -64,7 +65,7 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10,
     
 }
-
+'''
 MIDDLEWARE = [
 
     'django.middleware.security.SecurityMiddleware',
