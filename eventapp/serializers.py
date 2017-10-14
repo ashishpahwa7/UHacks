@@ -3,21 +3,25 @@ from eventapp.models import *
 
 
 
-class EventSerializer(serializers.ModelSerializer):
+
+class DoctorSerializer(serializers.ModelSerializer):
 	
 	class Meta:
-		model = Event
-		fields = ('name' ,'hosted_by','time','venue', 'description','date','img_url','department','id')
+		model = Doctor
+		fields = ('name' ,'specialization','hospital','license_number')
 
 
-class CollegeSerializer(serializers.ModelSerializer):
-	
-	events = EventSerializer(many=True, read_only=True)
+
+class DiseaseSerializer(serializers.ModelSerializer):
 	
 	class Meta:
-		model = College
-		fields = ('college_id','university','img_url', 'name' ,'description','events',)
+		model = Disease
+		fields = ('lat' ,'lon')
 
 
 
-
+class Disease1Serializer(serializers.ModelSerializer):
+	
+	class Meta:
+		model = Disease
+		fields = ('lat' ,'lon','disease_name')
