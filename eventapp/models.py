@@ -34,3 +34,14 @@ class Doctor(models.Model):
 
 	def __str__(self):
 		return self.name
+
+class disease(models.Model)
+	
+	doc_name = models.ForeignKey('Doctor')
+	h_name = models.ForeignKey('Hospital')
+	disease_name = models.CharField(max_length=20)
+	lon = models.DecimalField(max_digits=8, decimal_places=3)
+	lat = models.DecimalField(max_digits=8, decimal_places=3)
+
+	def __str__(self):
+		return self.disease_name
