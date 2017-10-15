@@ -25,3 +25,10 @@ class Disease1Serializer(serializers.ModelSerializer):
 	class Meta:
 		model = Disease
 		fields = ('lat' ,'lon','disease_name')
+
+
+class Disease2Serializer(serializers.ModelSerializer):
+	
+	class Meta:
+		model = Disease
+		fields = ('disease_name','date_time')

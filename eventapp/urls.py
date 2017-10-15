@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from eventapp import views
+from eventapp import views, statistics
 
 
 urlpatterns = [
@@ -7,7 +7,19 @@ urlpatterns = [
      #url(r'exchange_token$', views.get_access_token, name='exchange_token'),
      url(r'register_disease$', views.register_disease, name='register_disease'),
      url(r'login$', views.login_usr, name='login'),
-     url(r'geo_data$', views.get_geo_data, name='geo_data'),
-     #url(r'register_society$', register_society, name='register_society'),
-     #url(r'student_exist$',does_student_exists, name='does_student_exists'),  
+     url(r'custom_plot$', views.custom_plot, name='geo_data'), #ok tested
+     url(r'total_patients$', statistics.get_total_patient, name='get_total_patient'),  #ok tested
+     url(r'geo_distribution$',statistics.get_disease_distribution, name='get_disease_distribution'), #ok tested
+     url(r'plot_by_place$', views.plot_by_place, name='plot_by_place'), #ok tested
+     url(r'plot_by_disease$', views.plot_by_disease, name='plot_by_disease'), #ok tested
+     url(r'date_filter$', statistics.date_filter, name='date_filter'), #ok tested
+     url(r'date_filter_by_locality$', statistics.date_filter_by_locality, name='date_filter_by_locality'), #ok tested
+     url(r'date_filter_by_disease$', statistics.date_filter_by_disease, name='date_filter_by_disease'), #ok tested
+     url(r'time_series_plot$', statistics.time_series_plot, name='time_series_plot'), #ok tested
+     url(r'time_series_plot_by_locality$', statistics.time_series_plot_by_locality, name='time_series_plot_by_locality'), #ok tested
+     url(r'quant_analysis$', statistics.quant_analysis, name='quantity_analysis'), #ok tested
+     url(r'locality_analysis$', statistics.locality_analysis, name='locality_analysis'), #ok tested
+     url(r'local_analysis$', statistics.locality__analysis_2, name='locality_analysis'), #ok tested
+
+
 ]

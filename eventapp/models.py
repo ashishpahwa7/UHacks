@@ -37,14 +37,15 @@ class Doctor(models.Model):
 
 		return self.name
 
-class disease(models.Model)
+class Disease(models.Model):
 	
 	doc_name = models.ForeignKey('Doctor')
 	h_name = models.ForeignKey('Hospital')
 	disease_name = models.CharField(max_length=20)
 	lon = models.DecimalField(max_digits=8, decimal_places=3)
 	lat = models.DecimalField(max_digits=8, decimal_places=3)
-	date_time = models.DateTimeField(default=datetime.now, blank=True)
+	place = models.CharField(max_length=300, null=True, blank=True)
+	date_time = models.DateField(default=datetime.now, blank=True)
 
 	def __str__(self):
 		return self.disease_name

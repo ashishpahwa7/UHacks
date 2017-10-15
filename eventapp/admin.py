@@ -6,4 +6,12 @@ from .models import Hospital, Doctor, Disease
 
 admin.site.register(Hospital)
 admin.site.register(Doctor)
-admin.site.register(Disease)
+#admin.site.register(Disease)
+
+
+class DiseaseAdmin(admin.ModelAdmin):
+	list_display = ('disease_name','place')
+
+
+
+admin.site.register(Disease, DiseaseAdmin)
