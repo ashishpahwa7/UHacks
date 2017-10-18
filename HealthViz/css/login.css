@@ -1,0 +1,74 @@
+body{
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700');
+
+body{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.login-top-background{
+    background: url('../img/bg.jpg');
+    background-size: cover;
+    width: 102%;
+    height: 40%;
+    border-radius: 0 0 50% 50% / 40%;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+}
+
+.credentials{
+    padding: 15px;
+    color: black;
+    font-weight: bold;
+    width: 300px;
+    border: 0px;
+    letter-spacing: 1px;
+    border-bottom: 3px solid #F82462;
+}
+
+.login-submit{
+    width: 300px;
+    height: 50px;
+    text-transform: uppercase;
+    border: 0px;
+    letter-spacing: 1px;
+    font-size: 15px;
+    background: #1F2595;
+    border-bottom: 5px solid #121441;
+    border-radius: 10PX;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.21);
+    transition: 5s all linear;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-submit:active {
+    border:0px;
+    transition: 5s all linear;
+}
+
+.add-submit{
+    width: 300px;
+    height: 50px;
+    text-transform: uppercase;
+    border: 0px;
+    letter-spacing: 1px;
+    font-size: 15px;
+    background: #1F2595;
+    border-bottom: 5px solid #121441;
+    border-radius: 10PX;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.21);
+    transition: 5s all linear;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.add-submit:active {
+    border:0px;
+    transition: 5s all linear;
+}

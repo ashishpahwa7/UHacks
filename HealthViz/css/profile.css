@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700');
+body{
+    overflow: hidden;
+    font-family: 'Roboto Condensed';
+}
+.profile-wraper{
+    width: 100%;
+    height: 100%;
+}
+.profile-nav{
+    width: 100%;
+    height: 8%;
+    position: absolute;
+    border: 0px;
+    border-bottom: 1px solid #eee;
+}
+.ham-wraper{
+        top: 50%;
+        left: 20px;
+        position: absolute;
+        transform: translateY(-30%);
+}
+.line{
+    background: #F82462;
+    margin-bottom: 7px;
+}
+.line-1{
+    background: #F82462;
+    transform: translateY(-50%);
+    position: relative;
+    top: 50%;
+    width: 30px;
+    height: 2px;
+}
+.line-2{
+    transform: translateY(-50%);
+    position: relative;
+    top: 50%;
+    width: 20px;
+    height: 2px;
+}
+.line-3{
+    transform: translateY(-50%);
+    position: relative;
+    top: 50%;
+    width: 30px;
+    height: 2px;
+}
+.profile-image{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: 20%;
+    margin: 0 auto;
+    text-align: center;
+    top: 15%;
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+}
+.button-add{
+    width:50%;
+    display: table-cell;
+    vertical-align: middle;
+    border: none;
+    background: #1C1E61;
+    display: inline;
+    padding: 17px 0px;
+    left: 0px;
+    bottom: 0px;
+    position: fixed;
+    color: white;
+    border-bottom: 2px solid rgb(32, 37, 170);
+}
+
+.button-MAP{
+    width: 50%;
+    border: none;
+    background: #F82462;
+    display: inline;
+    padding: 17px 0px;
+    right: 0px;
+    bottom: 0px;
+    position: fixed;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    border-bottom: 2px solid rgb(148, 17, 56);
+}
+.disease{
+    width:150px;
+    height: 40px;
+    background: #3a3d96;
+    margin-left: 10px;
+    border: 2px solid #1C1E61;
+    border-radius: 4px;
+    font-weight: bold;
+    display: inline;
+    color: white;
+    padding: 5px;
+}
+
+.profile-wraper h1 {
+    width: 100%;
+    margin: 0 auto;
+    font-size: 80px;
+    color:#3a3d96;
+}
+
+h1 i {
+    font-size: 80px;
+    cursor: pointer;
+    margin-top: 30px;
+    color: #1C1E61 !important;
+}
